@@ -97,7 +97,7 @@ export default function SuaraCalegView() {
   // const [kelurahan, setKelurahan] = useState('');
   const [top10Calegs, setTop10Calegs] = useState([]);
 
-  const [calegs, setCalegs] = useState([]);
+  // const [calegs, setCalegs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [getGridSize, setGridSize] = useState({
     // default grid size
