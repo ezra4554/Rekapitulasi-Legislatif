@@ -113,7 +113,7 @@ export default function SuaraCalegView() {
 
   useEffect(() => {
     handleGetAllKecamatan();
-  }, []);
+  });
   const handleGetAllKecamatan = async () => {
     try {
       setLoading(true);
