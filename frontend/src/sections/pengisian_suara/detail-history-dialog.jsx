@@ -19,7 +19,6 @@ export default function DetailHistory({ parties }) {
   const handleClose = () => {
     setOpen(false);
   };
-  console.log(parties);
 
   return (
     <>
@@ -35,11 +34,17 @@ export default function DetailHistory({ parties }) {
         </AppBar>
         <List>
           <Grid container spacing={2} mb={5}>
-            {parties.map((party) => (
-              <Grid item xs={12} sm={6} md={4} key={party._id}>
-                <PartyCardV2 party={party} />
-              </Grid>
-            ))}
+            {parties.map((party) =>
+              //   <Grid item xs={12} sm={6} md={4} key={party._id}>
+              //     <PartyCardV2 party={party} />
+              //   </Grid>
+              // )
+              party.valid_ballots_detail.map((validBallotDetail) => (
+                <Grid>
+                  <PartyCardV2 party={validBallotDetail} />
+                </Grid>
+              ))
+            )}
           </Grid>
         </List>
       </Dialog>

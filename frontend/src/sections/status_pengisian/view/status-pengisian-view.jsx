@@ -188,6 +188,7 @@ export default function StatusPengisianView() {
                             village_name={row.village_name}
                             tps={row.number}
                             status={row.is_fillBallot}
+                            tps_id={row._id}
                           />
                         ))}
 

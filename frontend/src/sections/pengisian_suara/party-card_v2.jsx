@@ -16,6 +16,7 @@ import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import Iconify from 'src/components/iconify';
 
 export default function PartyCardV2({ party }) {
+  // console.log(party);
   return (
     <Accordion defaultExpanded>
       <AccordionSummary
@@ -26,7 +27,10 @@ export default function PartyCardV2({ party }) {
         <CardHeader
           avatar={
             <Avatar aria-label="recipe">
-              <img src={party.logoUrl} alt={party.name} />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/KPU_Logo.svg/1200px-KPU_Logo.svg.png"
+                alt={party.name}
+              />
             </Avatar>
           }
           subheader={party.name}

@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get("/", tpsController.getAllTps);
 router.get("/:districtId", tpsController.getAllTpsByDistrict);
+router.get("/:villageId", tpsController.getAllTpsByVillageId);
 router.post("/bulk", tpsController.bulkTps);
 router.post(
   "/fill/:tpsId",
