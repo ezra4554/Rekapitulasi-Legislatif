@@ -10,7 +10,7 @@ import DetailHistory from '../pengisian_suara/detail-history-dialog';
 
 // ----------------------------------------------------------------------
 
-export default function UserTableRow({ village_name, district_name, status, no, village_id }) {
+export default function UserTableRow({ village_name, district_name, status, no, village_id, tps }) {
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -30,10 +30,9 @@ export default function UserTableRow({ village_name, district_name, status, no, 
   return (
     <TableRow hover tabIndex={-1} status="checkbox">
       <TableCell align="center">{no}</TableCell>
-      <TableCell>{village_name}</TableCell>
-
       <TableCell>{district_name}</TableCell>
-
+      <TableCell>{village_name}</TableCell>
+      <TableCell>{tps}</TableCell>
       <TableCell>
         <Label color={status ? 'success' : 'error'}>
           {status ? 'Sudah Mengisi' : 'Belum Mengisi'}
@@ -54,5 +53,6 @@ UserTableRow.propTypes = {
   no: PropTypes.any,
   village_name: PropTypes.any,
   village_id: PropTypes.any,
+  tps: PropTypes.any,
   status: PropTypes.any,
 };

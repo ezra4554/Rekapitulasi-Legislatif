@@ -1,21 +1,23 @@
-import express from 'express'
-import rekapController from '../controllers/rekapController.js'
+import express from "express";
+import rekapController from "../controllers/rekapController.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/ballot', rekapController.getAllTpsResult)
+router.get("/ballot", rekapController.getAllTpsResult);
 router.get(
-  '/ballot-district/:districtId',
+  "/ballot-district/:districtId",
   rekapController.getAllTpsResultByDistrictId
-)
-router.get('/districts', rekapController.getAllDistrictWithResultVotes)
+);
+router.get("/districts", rekapController.getAllDistrictWithResultVotes);
 router.get(
-  '/villages/:districtId',
+  "/villages/:districtId",
   rekapController.getAllVillageByDistrictIdWithResultVote
-)
+);
+router.get("/tps", rekapController.getAllTps);
+router.get("/tps/:districtId", rekapController.getAllTpsByDistrictId);
 router.get(
-  '/tps/:villageId',
+  "/tps/:villageId",
   rekapController.getAllTpsByVillageIdWithResultVote
-)
+);
 
-export default router
+export default router;

@@ -25,6 +25,27 @@ const rekapService = {
     }
   },
 
+  getAllTps: async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/tps/`, {
+        withCredentials: true,
+      });
+      return response.data;
+    } catch (error) {
+      return error.response.data;
+    }
+  },
+  getAllTpsByDistrictId: async (districtId) => {
+    try {
+      const response = await axios.get(`${BASE_URL}/tps/${districtId}`, {
+        withCredentials: true,
+      });
+      return response.data;
+    } catch (error) {
+      return error.response.data;
+    }
+  },
+
   getAllTpsByVillageIdWithRekapVotes: async (villageId) => {
     try {
       const response = await axios.get(`${BASE_URL}/tps/${villageId}`, {
