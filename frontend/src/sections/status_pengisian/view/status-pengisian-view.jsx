@@ -10,8 +10,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TablePagination from '@mui/material/TablePagination';
 import { Grid, MenuItem, TextField, LinearProgress } from '@mui/material';
 
-// import villageService from 'src/services/villageService';
-import rekapService from 'src/services/rekapService';
+import tpsService from 'src/services/tpsService';
 import districtService from 'src/services/districtService';
 
 import Scrollbar from 'src/components/scrollbar';
@@ -49,7 +48,7 @@ export default function StatusPengisianView() {
 
         const getKecamatans = await districtService.getAllDistrictNames();
 
-        const getTps = await rekapService.getAllTps();
+        const getTps = await tpsService.getAllTpsRekap();
 
         // // console.log(getVillages.data);
         setTps(getTps.data);
@@ -70,7 +69,7 @@ export default function StatusPengisianView() {
       setLoading(true);
       setTps([]);
 
-      const getTps = await rekapService.getAllTpsByDistrictId(districtId);
+      const getTps = await tpsService.getAllTpsRekapByDistrict(districtId);
       // // console.log(getVillages.data);
 
       if (getTps.code === 200) {

@@ -22,6 +22,14 @@ const tpsService = {
       return error.response.data;
     }
   },
+  getAllTpsRekapByDistrict: async (districtId) => {
+    try {
+      const response = await axios.get(`${BASE_URL}/${districtId}`);
+      return response.data;
+    } catch (error) {
+      return error.response.data;
+    }
+  },
 };
 
 export default tpsService;

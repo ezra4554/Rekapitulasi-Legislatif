@@ -13,25 +13,19 @@ router.get(
   "/villages/:districtId",
   rekapController.getAllVillageByDistrictIdWithResultVote
 );
-router.get("/tps", rekapController.getAllTps);
-router.get("/tps/:districtId", rekapController.getAllTpsByDistrictId);
 router.get(
   "/tps/:villageId",
   rekapController.getAllTpsByVillageIdWithResultVote
 );
 
-<<<<<<< HEAD
-export default router;
-=======
-router.get('/caleg', rekapController.getAllCalegsRekap)
+router.get("/caleg", rekapController.getAllCalegsRekap);
 router.get(
-  '/caleg/district/:districtId',
+  "/caleg/district/:districtId",
   rekapController.getAllCalegsRekapByDistrictId
-)
+);
 router.get(
-  '/caleg/village/:villageId',
+  "/caleg/village/:villageId",
   rekapController.getAllCalegsRekapByVillageId
-)
+);
 
-export default router
->>>>>>> 88b487ac49ceb0aa13abdf7ca527b0cbad596df2
+export default router;

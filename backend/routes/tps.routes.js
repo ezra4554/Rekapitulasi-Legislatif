@@ -1,15 +1,16 @@
-import express from 'express'
-import tpsController from '../controllers/tpsController.js'
-import { protectUserVillageRoute } from '../middlewares/protectRoute.js'
+import express from "express";
+import tpsController from "../controllers/tpsController.js";
+import { protectUserVillageRoute } from "../middlewares/protectRoute.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', tpsController.getAllTps)
-router.post('/bulk', tpsController.bulkTps)
+router.get("/", tpsController.getAllTps);
+router.get("/:districtId", tpsController.getAllTpsByDistrict);
+router.post("/bulk", tpsController.bulkTps);
 router.post(
-  '/fill/:tpsId',
+  "/fill/:tpsId",
   protectUserVillageRoute,
   tpsController.fillValidBallotsDetail
-)
+);
 
-export default router
+export default router;
